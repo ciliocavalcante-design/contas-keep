@@ -160,8 +160,12 @@
   const monthSelect = $('#filter-month');
   function updateMonthOptions() {
     const months = new Set();
-    months.add(new Date().toISOString().slice(0,7));
-    notes.forEach(n => { if(n.month) months.add(n.month); });
+    const today = new Date().toISOString().slice(0,7);
+    months.add(today);
+    notes.forEach(n => {
+      const m = n.month || (n.createdAt ? new Date(n.createdAt).toISOString().slice(0,7) : null);
+      if(m) months.add(m);
+    });
     const sorted = [...months].sort().reverse();
     monthSelect.innerHTML = sorted.map(m => `<option value="${m}">${m.split('-').reverse().join('/')}</option>`).join('');
     monthSelect.value = currentMonth;
@@ -261,7 +265,8 @@
   $('.stat-card.third-party').onclick = () => {
     tpContent.innerHTML = '';
     const people = {};
-    notes.forEach(n => n.subcategories.forEach(sc => sc.items.forEach(it => {
+    notes.filter(n => (n.month || new Date(n.createdAt).toISOString().slice(0,7)) === currentMonth)
+         .forEach(n => n.subcategories.forEach(sc => sc.items.forEach(it => {
       if(it.isWarning) {
         const p = it.person || 'Outros';
         if(!people[p]) people[p] = { total: 0, groups: {} };
