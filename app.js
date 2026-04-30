@@ -187,7 +187,10 @@
     
     // Filter by Workspace and Month
     const workspaceFiltered = notes.filter(n => (n.type || 'personal') === currentWorkspace);
-    const monthFiltered = workspaceFiltered.filter(n => (n.month || n.createdAt ? new Date(n.createdAt).toISOString().slice(0,7) : '') === currentMonth);
+    const monthFiltered = workspaceFiltered.filter(n => {
+      const m = n.month || (n.createdAt ? new Date(n.createdAt).toISOString().slice(0,7) : '');
+      return m === currentMonth;
+    });
 
     const finalFiltered = monthFiltered.filter(n=>{
       if(!q) return true;

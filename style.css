@@ -267,6 +267,13 @@ input,button{font-family:inherit}
 .tp-subcat-header{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:.85rem;font-weight:700;color:var(--text-primary);margin-bottom:8px}
 .tp-header-due{font-size:.75rem;color:var(--accent);margin-left:8px;font-weight:600;opacity:0.8}
 
+@media (max-width: 600px) {
+  .tp-modal{width:100%;height:100%;max-width:100%;max-height:100%;border-radius:0}
+  .person-group{padding:15px 10px;margin-bottom:15px}
+  .person-item-row{padding:8px 0}
+  .tp-subcat-group{padding-left:8px}
+}
+
 /* ===== MOBILE OPTIMIZATION ===== */
 @media (max-width: 600px) {
   .header-main{padding:10px;flex-direction:column;gap:15px;align-items:stretch}
