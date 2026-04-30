@@ -625,7 +625,13 @@
       if(hasW) totalsEl.innerHTML = `<span class="subcat-header-mine" title="Meu Gasto">${fmt(m)}</span><span class="subcat-header-full" title="Total Cartão">${fmt(t)}</span>`;
       else totalsEl.innerHTML = `<span class="subcat-header-mine">${fmt(t)}</span>`;
     });
-    save(notes); render($('#search-input').value.trim());
+    save(notes); 
+    // If month was changed in modal, update the global filter to that month
+    if (note.month !== currentMonth) {
+        currentMonth = note.month;
+        localStorage.setItem(MK, currentMonth);
+    }
+    render($('#search-input').value.trim());
     updateModalSummary();
     updateMonthOptions(); 
   }
