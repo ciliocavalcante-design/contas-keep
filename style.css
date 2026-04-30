@@ -267,10 +267,49 @@ input,button{font-family:inherit}
 .tp-subcat-header{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:.85rem;font-weight:700;color:var(--text-primary);margin-bottom:8px}
 .tp-header-due{font-size:.75rem;color:var(--accent);margin-left:8px;font-weight:600;opacity:0.8}
 
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 600px) {
+  .header-main{padding:10px;flex-direction:column;gap:15px;align-items:stretch}
+  .search-container{width:100%}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:10px;padding:0 10px}
+  .stat-card{padding:12px}
+  .stat-label{font-size:.65rem}
+  .stat-value{font-size:1rem}
+  .fab{bottom:20px;right:20px;width:55px;height:55px}
+
+  /* Modal Mobile */
+  .modal-content{width:96%;padding:15px;max-height:92vh}
+  .modal-header{padding-bottom:12px}
+  .edit-month-group{flex-direction:column;gap:10px;align-items:stretch}
+  
+  .subcat-header{flex-wrap:wrap;gap:8px}
+  .subcat-header-name{font-size:.85rem;min-width:120px}
+  .subcat-header .subcat-header-totals{width:100%;justify-content:flex-end;margin-top:4px;border-top:1px solid rgba(255,255,255,0.03);padding-top:6px}
+
+  /* Item Row Mobile */
+  .edit-item{flex-wrap:wrap;padding:10px 8px;gap:8px;position:relative}
+  .item-drag-handle{position:absolute;left:4px;top:10px}
+  .edit-item .item-check{margin-left:24px}
+  .edit-item .item-name{flex:none;width:calc(100% - 150px);font-size:.9rem}
+  .edit-item .item-value-input{width:90px;font-size:.9rem}
+  
+  /* Break to second row for metadata */
+  .item-person-input, .item-due-container, .item-installment{margin-top:2px}
+  .edit-item .item-person-input{width:80px}
+  .edit-item .item-installment{width:50px}
+  .edit-item .item-due-container{transform:scale(0.85);margin-left:0}
+
+  .edit-item .btn-sub-toggle, .edit-item .btn-warning-toggle, .edit-item .item-delete{margin-left:auto}
+  
+  .modal-footer{flex-direction:column;gap:20px}
+  .modal-actions{width:100%}
+  .modal-actions button{width:100%}
+}
+
 /* ===== CONFETTI ===== */
 .confetti-piece{position:fixed;top:-20px;width:10px;height:10px;z-index:1000;animation:fall 3s linear forwards}
 @keyframes fall{
-  to{transform:translateY(105vh) rotate(720deg);opacity:0}
+  to{transform:translateY(100vh) rotate(720deg);opacity:0}
 }
 
 /* ===== PEOPLE MODAL ===== */
