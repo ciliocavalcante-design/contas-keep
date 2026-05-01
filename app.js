@@ -175,6 +175,9 @@
     const months = new Set();
     const today = new Date().toISOString().slice(0,7);
     months.add(today);
+    // Ensure the current selection is always an option to maintain persistence
+    if (currentMonth) months.add(currentMonth);
+
     notes.forEach(n => {
       const m = n.month || (n.createdAt ? new Date(n.createdAt).toISOString().slice(0,7) : null);
       if(m) months.add(m);
