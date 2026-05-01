@@ -8,7 +8,6 @@
     localStorage.setItem(SK, JSON.stringify(d));
     cloudPush();
   };
- Broadway
   const loadPeople = () => JSON.parse(localStorage.getItem(PK) || '[]');
   const savePeople = p => localStorage.setItem(PK, JSON.stringify(p));
 
