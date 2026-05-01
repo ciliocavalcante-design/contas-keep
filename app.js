@@ -748,6 +748,5 @@
   updateMonthOptions();
   renderPeopleList();
   render();
-  updateSyncStatus();
   setTimeout(cloudPull, 1000); 
 })();
