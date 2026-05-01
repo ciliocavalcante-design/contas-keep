@@ -245,7 +245,11 @@
 
   function updateDashboard() {
     let total=0,budget=0,pending=0,paid=0,tp=0,inc=0;
-    notes.forEach(n=>{
+    const filtered = notes.filter(n => 
+      (n.type || 'personal') === currentWorkspace && 
+      (n.month || (n.createdAt ? new Date(n.createdAt).toISOString().slice(0,7) : '')) === currentMonth
+    );
+    filtered.forEach(n=>{
       n.subcategories.forEach(sc=>sc.items.forEach(i=>{
         total+=i.value;
         if(i.isWarning){tp+=i.value}
@@ -253,6 +257,7 @@
       }));
       if(n.income){inc+=(n.income.salary||0)+(n.income.youtube||0)+(n.income.hdc||0)+(n.income.extra||0);}
     });
+ Broadway
     $('#stat-total').textContent=fmt(total);
     $('#stat-budget').textContent=fmt(budget);
     $('#stat-pending').textContent=fmt(pending);

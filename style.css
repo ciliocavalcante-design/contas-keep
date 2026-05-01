@@ -287,10 +287,18 @@ input,button{font-family:inherit}
   .header-main{padding:15px 10px;background:rgba(22,25,37,0.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:sticky;top:0;z-index:100}
   .fab{bottom:25px;right:20px;width:60px;height:60px;box-shadow:0 8px 25px rgba(124,77,255,0.4)}
 
-  /* Modal Mobile */
-  .modal-content{width:96%;padding:15px;max-height:92vh}
-  .modal-header{padding-bottom:12px}
-  .edit-month-group{flex-direction:column;gap:10px;align-items:stretch}
+  /* Modal Mobile Refinement */
+  .modal-content{width:100%;height:100%;max-height:100vh;border-radius:0;padding:12px;display:flex;flex-direction:column}
+  #subcategories-container{flex:1;overflow-y:auto;padding-bottom:100px}
+  .modal-header{padding:10px 5px}
+  .modal-header h2{font-size:1.1rem}
+  .edit-month-group select, .edit-month-group input{font-size:.8rem;padding:6px}
+  
+  .subcat-header{padding:12px 6px}
+  .subcat-header-name{font-size:.8rem}
+  .edit-item .item-name{width:calc(100% - 130px);font-size:.85rem}
+  
+  .modal-footer{padding:15px 10px;background:var(--bg-card);border-top:1px solid rgba(255,255,255,0.05);position:fixed;bottom:0;left:0;width:100%;z-index:110}
   
   .subcat-header{flex-wrap:wrap;gap:8px}
   .subcat-header-name{font-size:.85rem;min-width:120px}
