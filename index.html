@@ -36,7 +36,6 @@
       </div>
     </div>
     <div class="header-right">
-      <button id="btn-sync-config" class="icon-btn" title="Configurar Sincronização GitHub">☁️</button>
       <button id="btn-export" class="icon-btn" aria-label="Exportar Backup" title="Exportar JSON">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       </button>
@@ -298,27 +297,6 @@
 
   <!-- ==================== TOAST ==================== -->
   <div id="toast" class="hidden"></div>
-
-  <!-- Sync Modal (GitHub) -->
-  <div id="sync-modal" class="modal-overlay hidden">
-    <div class="modal-content" style="max-width: 400px;">
-      <div class="modal-header">
-        <h2>Sincronização GitHub</h2>
-        <button class="icon-btn" onclick="document.getElementById('sync-modal').classList.add('hidden')">✕</button>
-      </div>
-      <div class="modal-body" style="display: flex; flex-direction: column; gap: 15px; padding: 20px 0;">
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Seus dados serão salvos no arquivo <strong>database.json</strong> do seu repositório.</p>
-        <div class="input-group" style="display: flex; flex-direction: column; gap: 5px;">
-          <label style="font-size: 0.75rem; color: var(--text-secondary);">GitHub Access Token (PAT)</label>
-          <input type="password" id="gh-token-input" placeholder="ghp_xxxxxxxxxxxx" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; color: #fff;">
-          <small style="font-size: 0.7rem; color: var(--text-muted); margin-top: 5px;">Crie um token com permissão <b>repo</b> ou <b>contents (read/write)</b>.</small>
-        </div>
-      </div>
-      <div class="modal-footer" style="justify-content: flex-end;">
-        <button id="btn-save-sync" class="btn-save">Conectar GitHub</button>
-      </div>
-    </div>
-  </div>
 
   <script src="app.js"></script>
 </body>

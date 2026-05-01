@@ -15,12 +15,7 @@
   let people = loadPeople();
   let currentMonth = localStorage.getItem(MK) || new Date().toISOString().slice(0,7);
   let currentWorkspace = localStorage.getItem(WK) || 'personal';
-  
-  // GitHub Sync Configuration
-  let ghToken = localStorage.getItem('contas_keep_gh_token') || '';
-  const ghOwner = 'ciliocavalcante-design';
-  const ghRepo = 'contas-keep';
-  const ghPath = 'database.json';
+  let syncUrl = 'https://contas-keep-sync.ciliocavalcante.workers.dev';
   const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
 
   // Confetti effect
@@ -61,49 +56,23 @@
     toast('Backup exportado com sucesso!');
   };
 
-  // GitHub Sync Logic
+  // Cloud Sync Logic (Invisible)
   async function cloudPush() {
-    if(!ghToken) return;
     try {
       const data = { notes, theme: localStorage.getItem(TK), view: localStorage.getItem(VK), timestamp: Date.now() };
-      const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
-      
-      // 1. Get current file SHA (required for update)
-      const resGet = await fetch(`https://api.github.com/repos/${ghOwner}/${ghRepo}/contents/${ghPath}`, {
-        headers: { 'Authorization': `token ${ghToken}` }
+      await fetch(syncUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
       });
-      
-      let sha = null;
-      if(resGet.ok) {
-        const fileData = await resGet.json();
-        sha = fileData.sha;
-      }
-
-      // 2. Update/Create file
-      await fetch(`https://api.github.com/repos/${ghOwner}/${ghRepo}/contents/${ghPath}`, {
-        method: 'PUT',
-        headers: { 
-          'Authorization': `token ${ghToken}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          message: 'Sync: update database',
-          content: content,
-          sha: sha
-        })
-      });
-    } catch (e) { console.error('GH Push error', e); }
+    } catch (e) {}
   }
 
   async function cloudPull() {
-    if(!ghToken) return;
     try {
-      const res = await fetch(`https://api.github.com/repos/${ghOwner}/${ghRepo}/contents/${ghPath}?t=${Date.now()}`, {
-        headers: { 'Authorization': `token ${ghToken}` }
-      });
+      const res = await fetch(syncUrl);
       if(res.ok) {
-        const fileData = await res.json();
-        const data = JSON.parse(decodeURIComponent(escape(atob(fileData.content))));
+        const data = await res.json();
         if(data && data.notes) {
           const localTimestamp = parseInt(localStorage.getItem('contas_keep_last_sync') || '0');
           if(data.timestamp > localTimestamp || notes.length === 0) {
@@ -114,23 +83,11 @@
             if(data.view) applyView(data.view);
             updateMonthOptions();
             render();
-            toast('Sincronizado com GitHub');
           }
         }
       }
-    } catch (e) { console.error('GH Pull error', e); }
+    } catch (e) {}
   }
-
-  $('#btn-sync-config').onclick = () => $('#sync-modal').classList.remove('hidden');
-  $('#btn-save-sync').onclick = async () => {
-    ghToken = $('#gh-token-input').value.trim();
-    if(!ghToken) return toast('Insira o seu Token do GitHub');
-    localStorage.setItem('contas_keep_gh_token', ghToken);
-    $('#sync-modal').classList.add('hidden');
-    toast('Conectando ao GitHub...');
-    await cloudPull();
-    await cloudPush();
-  };
 
   $('#btn-import').onclick = () => $('#import-file').click();
   $('#import-file').onchange = e => {
