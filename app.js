@@ -257,7 +257,7 @@
       }));
       if(n.income){inc+=(n.income.salary||0)+(n.income.youtube||0)+(n.income.hdc||0)+(n.income.extra||0);}
     });
- Broadway
+
     $('#stat-total').textContent=fmt(total);
     $('#stat-budget').textContent=fmt(budget);
     $('#stat-pending').textContent=fmt(pending);
