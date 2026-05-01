@@ -115,9 +115,11 @@
 
     const filterRules = (it, scName) => {
         const name = (it.name || '').toLowerCase();
-        const scN = (scName || '').toUpperCase();
-        const isFixas = scN === 'FIXAS';
-        const isRecurrente = it.isSubscription || name.includes('recarga') || name.includes('seguro');
+        const scN = (scName || '').trim().toUpperCase();
+        
+        // Items to ALWAYS keep: In 'FIXAS' subcat, or marked as subscription, or with recurring keywords
+        const isFixas = scN.includes('FIXA'); 
+        const isRecurrente = it.isSubscription || name.includes('recarga') || name.includes('seguro') || name.includes('assinatura');
         
         if (it.installment) {
             let parts = it.installment.split('/');
@@ -128,7 +130,7 @@
                     it.checked = false;
                     return true;
                 }
-                return false; 
+                return false; // Installment finished
             }
         }
         
@@ -136,6 +138,8 @@
             it.checked = false;
             return true;
         }
+        
+        // Otherwise, it's a one-time expense (despesa única) - don't copy
         return false;
     };
 
