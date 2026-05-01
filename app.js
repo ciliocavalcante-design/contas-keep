@@ -114,18 +114,22 @@
     });
 
     const filterRules = (it, scName) => {
-        const name = it.name.toLowerCase();
-        const isFixas = scName.toUpperCase() === 'FIXAS';
+        const name = (it.name || '').toLowerCase();
+        const scN = (scName || '').toUpperCase();
+        const isFixas = scN === 'FIXAS';
         const isRecurrente = it.isSubscription || name.includes('recarga') || name.includes('seguro');
         
         if (it.installment) {
-            let [cur, total] = it.installment.split('/').map(Number);
-            if (cur < total) {
-                it.installment = `${cur + 1}/${total}`;
-                it.checked = false;
-                return true;
+            let parts = it.installment.split('/');
+            if (parts.length === 2) {
+                let [cur, total] = parts.map(Number);
+                if (cur < total) {
+                    it.installment = `${cur + 1}/${total}`;
+                    it.checked = false;
+                    return true;
+                }
+                return false; 
             }
-            return false; // Last installment reached
         }
         
         if (isFixas || isRecurrente) {
