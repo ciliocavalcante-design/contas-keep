@@ -15,8 +15,8 @@
   let people = loadPeople();
   let currentMonth = localStorage.getItem(MK) || new Date().toISOString().slice(0,7);
   let currentWorkspace = localStorage.getItem(WK) || 'personal';
-  let syncKey = localStorage.getItem('contas_keep_sync_key') || '';
-  let syncUrl = localStorage.getItem('contas_keep_sync_url') || '';
+  let syncKey = 'keep_sync_cilio_unique_v1'; 
+  let syncUrl = '/sync';
 
   const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
 
@@ -60,7 +60,6 @@
 
   // Cloud Sync Logic
   async function cloudPush() {
-    if(!syncKey || !syncUrl) return;
     try {
       const data = { notes, theme: localStorage.getItem(TK), view: localStorage.getItem(VK), timestamp: Date.now() };
       await fetch(syncUrl, {
@@ -68,11 +67,10 @@
         headers: { 'Content-Type': 'application/json', 'X-Sync-Key': syncKey },
         body: JSON.stringify(data)
       });
-    } catch (e) { console.error('Sync error', e); }
+    } catch (e) {}
   }
 
   async function cloudPull() {
-    if(!syncKey || !syncUrl) return;
     try {
       const res = await fetch(`${syncUrl}?key=${syncKey}`, {
         headers: { 'X-Sync-Key': syncKey }
@@ -80,7 +78,6 @@
       if(res.ok) {
         const data = await res.json();
         if(data && data.notes) {
-          // Only update if cloud data is newer or local is empty
           const localTimestamp = parseInt(localStorage.getItem('contas_keep_last_sync') || '0');
           if(data.timestamp > localTimestamp || notes.length === 0) {
             notes = data.notes;
@@ -90,39 +87,10 @@
             if(data.view) applyView(data.view);
             updateMonthOptions();
             render();
-            toast('Dados sincronizados da nuvem');
           }
         }
       }
-    } catch (e) { console.error('Pull error', e); }
-  }
-
-  $('#btn-sync-config').onclick = () => $('#sync-modal').classList.remove('hidden');
-  $('#btn-save-sync').onclick = async () => {
-    syncKey = $('#sync-key-input').value.trim();
-    syncUrl = $('#sync-url-input').value.trim();
-    if(!syncKey || !syncUrl) return toast('Preencha a URL e a Senha');
-    
-    localStorage.setItem('contas_keep_sync_key', syncKey);
-    localStorage.setItem('contas_keep_sync_url', syncUrl);
-    $('#sync-modal').classList.add('hidden');
-    
-    toast('Conectando à nuvem...');
-    await cloudPush(); 
-    await cloudPull(); 
-    updateSyncStatus();
-  };
-
-  function updateSyncStatus() {
-    const btn = $('#btn-sync-config');
-    if(!btn) return;
-    if(syncKey && syncUrl) {
-      btn.style.color = '#69f0ae'; 
-      btn.title = 'Sincronização Ativa';
-    } else {
-      btn.style.color = '';
-      btn.title = 'Configurar Sincronização';
-    }
+    } catch (e) {}
   }
 
   $('#btn-import').onclick = () => $('#import-file').click();
