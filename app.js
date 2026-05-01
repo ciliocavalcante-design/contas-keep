@@ -15,7 +15,7 @@
   let people = loadPeople();
   let currentMonth = localStorage.getItem(MK) || new Date().toISOString().slice(0,7);
   let currentWorkspace = localStorage.getItem(WK) || 'personal';
-  let syncUrl = 'https://contas-keep-sync.ciliocavalcante.workers.dev';
+  let syncUrl = 'https://contas-keep-api.ciliocavalcante.workers.dev';
   const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
 
   // Confetti effect
