@@ -4,7 +4,11 @@
   const PK = 'contas_keep_people', MK = 'contas_keep_cur_month', WK = 'contas_keep_cur_ws';
   
   const load = () => JSON.parse(localStorage.getItem(SK) || '[]');
-  const save = d => localStorage.setItem(SK, JSON.stringify(d));
+  const save = d => {
+    localStorage.setItem(SK, JSON.stringify(d));
+    cloudPush();
+  };
+ Broadway
   const loadPeople = () => JSON.parse(localStorage.getItem(PK) || '[]');
   const savePeople = p => localStorage.setItem(PK, JSON.stringify(p));
 
@@ -12,6 +16,8 @@
   let people = loadPeople();
   let currentMonth = localStorage.getItem(MK) || new Date().toISOString().slice(0,7);
   let currentWorkspace = localStorage.getItem(WK) || 'personal';
+  let syncKey = localStorage.getItem('contas_keep_sync_key') || '';
+  let syncUrl = localStorage.getItem('contas_keep_sync_url') || '';
 
   const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
 
@@ -51,6 +57,56 @@
     a.click();
     URL.revokeObjectURL(url);
     toast('Backup exportado com sucesso!');
+  };
+
+  // Cloud Sync Logic
+  async function cloudPush() {
+    if(!syncKey || !syncUrl) return;
+    try {
+      const data = { notes, theme: localStorage.getItem(TK), view: localStorage.getItem(VK), timestamp: Date.now() };
+      await fetch(syncUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Sync-Key': syncKey },
+        body: JSON.stringify(data)
+      });
+    } catch (e) { console.error('Sync error', e); }
+  }
+
+  async function cloudPull() {
+    if(!syncKey || !syncUrl) return;
+    try {
+      const res = await fetch(`${syncUrl}?key=${syncKey}`, {
+        headers: { 'X-Sync-Key': syncKey }
+      });
+      if(res.ok) {
+        const data = await res.json();
+        if(data && data.notes) {
+          // Only update if cloud data is newer or local is empty
+          const localTimestamp = parseInt(localStorage.getItem('contas_keep_last_sync') || '0');
+          if(data.timestamp > localTimestamp || notes.length === 0) {
+            notes = data.notes;
+            localStorage.setItem(SK, JSON.stringify(notes));
+            localStorage.setItem('contas_keep_last_sync', data.timestamp);
+            if(data.theme) applyTheme(data.theme);
+            if(data.view) applyView(data.view);
+            updateMonthOptions();
+            render();
+            toast('Dados sincronizados da nuvem');
+          }
+        }
+      }
+    } catch (e) { console.error('Pull error', e); }
+  }
+
+  $('#btn-sync-config').onclick = () => $('#sync-modal').classList.remove('hidden');
+  $('#btn-save-sync').onclick = () => {
+    syncKey = $('#sync-key-input').value.trim();
+    syncUrl = $('#sync-url-input').value.trim();
+    localStorage.setItem('contas_keep_sync_key', syncKey);
+    localStorage.setItem('contas_keep_sync_url', syncUrl);
+    $('#sync-modal').classList.add('hidden');
+    cloudPull();
+    toast('Configurações de sincronização salvas');
   };
 
   $('#btn-import').onclick = () => $('#import-file').click();
@@ -708,4 +764,5 @@
   updateMonthOptions();
   renderPeopleList();
   render();
+  setTimeout(cloudPull, 1000); // Try to pull cloud data on start
 })();

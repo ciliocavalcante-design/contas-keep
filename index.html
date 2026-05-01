@@ -36,6 +36,7 @@
       </div>
     </div>
     <div class="header-right">
+      <button id="btn-sync-config" class="icon-btn" title="Configurar Sincronização Nuvem">☁️</button>
       <button id="btn-export" class="icon-btn" aria-label="Exportar Backup" title="Exportar JSON">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       </button>
@@ -297,6 +298,30 @@
 
   <!-- ==================== TOAST ==================== -->
   <div id="toast" class="hidden"></div>
+
+  <!-- Sync Modal -->
+  <div id="sync-modal" class="modal-overlay hidden">
+    <div class="modal-content" style="max-width: 400px;">
+      <div class="modal-header">
+        <h2>Sincronização Cloudflare</h2>
+        <button class="icon-btn" onclick="document.getElementById('sync-modal').classList.add('hidden')">✕</button>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 15px; padding: 20px 0;">
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Configure sua Worker da Cloudflare para salvar seus dados automaticamente.</p>
+        <div class="input-group" style="display: flex; flex-direction: column; gap: 5px;">
+          <label style="font-size: 0.75rem; color: var(--text-secondary);">URL da Worker</label>
+          <input type="text" id="sync-url-input" placeholder="https://seu-worker.workers.dev" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; color: #fff;">
+        </div>
+        <div class="input-group" style="display: flex; flex-direction: column; gap: 5px;">
+          <label style="font-size: 0.75rem; color: var(--text-secondary);">Chave Secreta (Senha)</label>
+          <input type="password" id="sync-key-input" placeholder="Sua senha secreta" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; color: #fff;">
+        </div>
+      </div>
+      <div class="modal-footer" style="justify-content: flex-end;">
+        <button id="btn-save-sync" class="btn-save">Salvar e Conectar</button>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
