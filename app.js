@@ -16,7 +16,7 @@
   let currentMonth = localStorage.getItem(MK) || new Date().toISOString().slice(0,7);
   let currentWorkspace = localStorage.getItem(WK) || 'personal';
   let syncKey = 'keep_sync_cilio_unique_v1'; 
-  let syncUrl = '/sync';
+  let syncUrl = 'https://contas-keep-sync.ciliocavalcante.workers.dev/sync';
 
   const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
 
