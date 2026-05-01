@@ -98,15 +98,32 @@
   }
 
   $('#btn-sync-config').onclick = () => $('#sync-modal').classList.remove('hidden');
-  $('#btn-save-sync').onclick = () => {
+  $('#btn-save-sync').onclick = async () => {
     syncKey = $('#sync-key-input').value.trim();
     syncUrl = $('#sync-url-input').value.trim();
+    if(!syncKey || !syncUrl) return toast('Preencha a URL e a Senha');
+    
     localStorage.setItem('contas_keep_sync_key', syncKey);
     localStorage.setItem('contas_keep_sync_url', syncUrl);
     $('#sync-modal').classList.add('hidden');
-    cloudPull();
-    toast('Configurações de sincronização salvas');
+    
+    toast('Conectando à nuvem...');
+    await cloudPush(); 
+    await cloudPull(); 
+    updateSyncStatus();
   };
+
+  function updateSyncStatus() {
+    const btn = $('#btn-sync-config');
+    if(!btn) return;
+    if(syncKey && syncUrl) {
+      btn.style.color = '#69f0ae'; 
+      btn.title = 'Sincronização Ativa';
+    } else {
+      btn.style.color = '';
+      btn.title = 'Configurar Sincronização';
+    }
+  }
 
   $('#btn-import').onclick = () => $('#import-file').click();
   $('#import-file').onchange = e => {
@@ -763,5 +780,6 @@
   updateMonthOptions();
   renderPeopleList();
   render();
-  setTimeout(cloudPull, 1000); // Try to pull cloud data on start
+  updateSyncStatus();
+  setTimeout(cloudPull, 1000); 
 })();
