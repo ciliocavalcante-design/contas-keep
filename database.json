@@ -1,0 +1,933 @@
+{
+  "notes": [
+    {
+      "id": "momwn7vlac1zz",
+      "title": "DESPESAS VENC JUNHO 2026",
+      "color": "default",
+      "createdAt": 1777639473057,
+      "income": {
+        "salary": 3240,
+        "youtube": 0,
+        "hdc": 0,
+        "extra": 0,
+        "extraLabel": ""
+      },
+      "subcategories": [
+        {
+          "id": "molfzrbcgv5fj",
+          "name": "FIXAS",
+          "dueDay": "",
+          "items": [
+            {
+              "id": "molg1sfosbk3g",
+              "name": "IPTV",
+              "value": 30,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "5",
+              "person": "",
+              "dueDay": "15"
+            },
+            {
+              "id": "molg22faw5u3r",
+              "name": "CAGECE",
+              "value": 130,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "5",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg25c0ekfoc",
+              "name": "BRISANET",
+              "value": 115,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "10",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg27ejpxufz",
+              "name": "TIM",
+              "value": 70,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "10",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg28cpj5qfu",
+              "name": "ENEL",
+              "value": 155,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "5",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg446c898w6",
+              "name": "TIM",
+              "value": 80,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": true,
+              "installment": "10",
+              "person": "Raylma",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molg4icoqlysg",
+          "name": "FINANCIAMENTO",
+          "dueDay": "15",
+          "items": [
+            {
+              "id": "molg5utwegvcr",
+              "name": "ARGO",
+              "value": 1490,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "24/48",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg5xxpmwbai",
+              "name": "SEGURO",
+              "value": 180,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "11/12",
+              "person": "",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molg6ymmt46f7",
+          "name": "picpay",
+          "dueDay": "5",
+          "items": [
+            {
+              "id": "molg8ed37unfa",
+              "name": "IPHONE",
+              "value": 425,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "6/10",
+              "person": "Raylma",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molg8d5m94txw",
+          "name": "ITAÚ CLICK",
+          "dueDay": "10",
+          "items": [
+            {
+              "id": "molg9cpi2py2i",
+              "name": "SAPATOS",
+              "value": 100,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "6/6",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg9f5xqg0z7",
+              "name": "SEGURO CARTÃO",
+              "value": 10,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molga3s3lpeh6",
+          "name": "MERCADO PAGO",
+          "dueDay": "10",
+          "items": [
+            {
+              "id": "molgb26px3xe9",
+              "name": "TABLET SAMSUNG A9+",
+              "value": 115,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "8/10",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgbfe09010e",
+              "name": "RAYLMA TABLET A9+",
+              "value": 110,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "8/10",
+              "person": "Raylma",
+              "dueDay": ""
+            },
+            {
+              "id": "molge32b2eqbi",
+              "name": "EDUARDO CAIXA",
+              "value": 70,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "5/8",
+              "person": "Eduardo",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molgjaazwqu25",
+          "name": "inter",
+          "dueDay": "15",
+          "items": [
+            {
+              "id": "molgn9gfk1amk",
+              "name": "MACBOOK AIR M4",
+              "value": 550,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "7/12",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgndgilh338",
+              "name": "PERFUME YARA",
+              "value": 17,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "7/12",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgnjdc0hb8x",
+              "name": "CONSERTO CARRO",
+              "value": 300,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "3/4",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgnlbctzsjh",
+              "name": "CONSERTO CARRO",
+              "value": 420,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "3/10",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molktcl9uzho8",
+              "name": "RECARGA",
+              "value": 40,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molgqu31wxvdn",
+          "name": "credicard",
+          "dueDay": "15",
+          "items": [
+            {
+              "id": "molgui78b1bmt",
+              "name": "CAPA DO TECLADO",
+              "value": 7,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "6/11",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgv4zcmc2sw",
+              "name": "CARPLAY + ACESSÓRIOS",
+              "value": 15,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "6/11",
+              "person": "",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molgx2hkx9gqa",
+          "name": "iti",
+          "dueDay": "15",
+          "items": [
+            {
+              "id": "molgy4yhb2loq",
+              "name": "GELADEIRA COMRPRA",
+              "value": 210,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "8/10",
+              "person": "Ray Menotti",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molgx56jvl6za",
+          "name": "amazon card",
+          "dueDay": "",
+          "items": []
+        },
+        {
+          "id": "molgx8mvpa0xe",
+          "name": "caixa tem",
+          "dueDay": "",
+          "items": []
+        }
+      ],
+      "month": "2026-05",
+      "type": "personal"
+    },
+    {
+      "id": "molfzectcxfli",
+      "title": "DESPESAS VENC MAIO 2026",
+      "color": "default",
+      "createdAt": 1777551021677,
+      "income": {
+        "salary": 3240,
+        "youtube": 0,
+        "hdc": 0,
+        "extra": 0,
+        "extraLabel": ""
+      },
+      "subcategories": [
+        {
+          "id": "molfzrbcgv5fj",
+          "name": "FIXAS",
+          "dueDay": "",
+          "items": [
+            {
+              "id": "molg1sfosbk3g",
+              "name": "IPTV",
+              "value": 30,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "5",
+              "person": "",
+              "dueDay": "15"
+            },
+            {
+              "id": "molg22faw5u3r",
+              "name": "CAGECE",
+              "value": 130,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "5",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg25c0ekfoc",
+              "name": "BRISANET",
+              "value": 115,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "10",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg27ejpxufz",
+              "name": "TIM",
+              "value": 70,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "10",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg28cpj5qfu",
+              "name": "ENEL",
+              "value": 155,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "5",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg446c898w6",
+              "name": "RAYLMA TIM",
+              "value": 80,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": true,
+              "installment": "10",
+              "person": "Raylma",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molg4icoqlysg",
+          "name": "FINANCIAMENTO",
+          "dueDay": "15",
+          "items": [
+            {
+              "id": "molg5utwegvcr",
+              "name": "ARGO",
+              "value": 1490,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "23/48",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg5xxpmwbai",
+              "name": "SEGURO",
+              "value": 180,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "10/12",
+              "person": "",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molg6ymmt46f7",
+          "name": "picpay",
+          "dueDay": "5",
+          "items": [
+            {
+              "id": "molg7iyftrjxg",
+              "name": "CAIXA JBL",
+              "value": 245,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "9/9",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molk819zxjbkq",
+              "name": "RESTAURANTES",
+              "value": 280,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molk8np17miuh",
+              "name": "IFOOD",
+              "value": 50,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molk9um2kjmld",
+              "name": "UBER",
+              "value": 100,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molke67mrwghx",
+              "name": "SUPER DO POVO",
+              "value": 115,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg8ed37unfa",
+              "name": "RAYLMA IPHONE",
+              "value": 425,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "5/10",
+              "person": "Raylma",
+              "dueDay": ""
+            },
+            {
+              "id": "moltga09g3zj6",
+              "name": "RAYLMA PRAIA",
+              "value": 60,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "",
+              "person": "Raylma",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molg8d5m94txw",
+          "name": "ITAÚ CLICK",
+          "dueDay": "10",
+          "items": [
+            {
+              "id": "molg97zh088an",
+              "name": "MIC LARK M2",
+              "value": 105,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "8/8",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg9cpi2py2i",
+              "name": "SAPATOS",
+              "value": 100,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "5/6",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molg9f5xqg0z7",
+              "name": "SEGURO CARTÃO",
+              "value": 10,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molga3s3lpeh6",
+          "name": "MERCADO PAGO",
+          "dueDay": "10",
+          "items": [
+            {
+              "id": "molgan26r21dc",
+              "name": "HUB UGREEN",
+              "value": 85,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "5/5",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgaq2yoi2bt",
+              "name": "VG SAMPLES",
+              "value": 55,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "6/6",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgau77kywua",
+              "name": "TECLADO SMK",
+              "value": 160,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "5/5",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgb26px3xe9",
+              "name": "TABLET SAMSUNG A9+",
+              "value": 115,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "7/10",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "moltah8devm2n",
+              "name": "EXTRAS",
+              "value": 8,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgbbmhxmkwu",
+              "name": "RAYLMA PRESENTE ANIVERSÁRIO",
+              "value": 52,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "3/3",
+              "person": "Raylma",
+              "dueDay": ""
+            },
+            {
+              "id": "molgbfe09010e",
+              "name": "RAYLMA TABLET A9+",
+              "value": 110,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "7/10",
+              "person": "Raylma",
+              "dueDay": ""
+            },
+            {
+              "id": "molge32b2eqbi",
+              "name": "EDUARDO CAIXA",
+              "value": 70,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "4/8",
+              "person": "Eduardo",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molgjaazwqu25",
+          "name": "inter",
+          "dueDay": "15",
+          "items": [
+            {
+              "id": "molgn3rne49ha",
+              "name": "IFOOD",
+              "value": 13,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgn9gfk1amk",
+              "name": "MACBOOK AIR M4",
+              "value": 550,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "6/12",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgndgilh338",
+              "name": "PERFUME YARA",
+              "value": 17,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "6/12",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgnjdc0hb8x",
+              "name": "CONSERTO CARRO",
+              "value": 300,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "2/4",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgnlbctzsjh",
+              "name": "CONSERTO CARRO",
+              "value": 420,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "2/10",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molklmbs8oee0",
+              "name": "UBER",
+              "value": 80,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molknqb77y6k2",
+              "name": "RESTAURANTES/BARES",
+              "value": 250,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molksbl6jg36q",
+              "name": "SUPERMERCADO O POVO",
+              "value": 60,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molktcl9uzho8",
+              "name": "RECARGA",
+              "value": 40,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": true,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molktxxb1nh0d",
+              "name": "MIX MATEUS FRALDAS",
+              "value": 25,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "moltcvufmqxti",
+              "name": "RAYLMA MIX MATEUS FRALDAS",
+              "value": 25,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "",
+              "person": "Raylma",
+              "dueDay": ""
+            },
+            {
+              "id": "moltdla54h7eb",
+              "name": "RAYLMA ANIVERSÁRIO",
+              "value": 45,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "",
+              "person": "Raylma",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molgqu31wxvdn",
+          "name": "credicard",
+          "dueDay": "15",
+          "items": [
+            {
+              "id": "molgu2vwkkq0t",
+              "name": "CERÂMICAS",
+              "value": 203,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "10/10",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgui78b1bmt",
+              "name": "CAPA DO TECLADO",
+              "value": 7,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "5/11",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgv4zcmc2sw",
+              "name": "CARPLAY + ACESSÓRIOS",
+              "value": 15,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "5/11",
+              "person": "",
+              "dueDay": ""
+            },
+            {
+              "id": "molgvkpjv8ora",
+              "name": "EDUARDO PISO",
+              "value": 80,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "10/10",
+              "person": "Eduardo",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molgx2hkx9gqa",
+          "name": "iti",
+          "dueDay": "15",
+          "items": [
+            {
+              "id": "molgy4yhb2loq",
+              "name": "RAY MENOTTI COMPRA",
+              "value": 210,
+              "checked": false,
+              "isWarning": true,
+              "isSubscription": false,
+              "installment": "7/10",
+              "person": "Ray Menotti",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molgx56jvl6za",
+          "name": "amazon card",
+          "dueDay": "",
+          "items": []
+        },
+        {
+          "id": "molgx8mvpa0xe",
+          "name": "caixa tem",
+          "dueDay": "",
+          "items": []
+        }
+      ],
+      "month": "2026-04",
+      "type": "personal"
+    },
+    {
+      "id": "molerbqxun4ok",
+      "title": "LL Samples",
+      "color": "default",
+      "createdAt": 1777548965433,
+      "income": {
+        "salary": 0,
+        "youtube": 0,
+        "hdc": 0,
+        "extra": 0,
+        "extraLabel": ""
+      },
+      "subcategories": [
+        {
+          "id": "molerkt5f3f4e",
+          "name": "CREDICARD",
+          "dueDay": "",
+          "items": [
+            {
+              "id": "molesw4nc7xph",
+              "name": "100",
+              "value": 0,
+              "checked": false,
+              "isWarning": false,
+              "isSubscription": false,
+              "installment": "",
+              "person": "",
+              "dueDay": ""
+            }
+          ]
+        },
+        {
+          "id": "molesu1y44cuk",
+          "name": "",
+          "dueDay": "",
+          "items": []
+        }
+      ],
+      "month": "2026-04",
+      "type": "business"
+    }
+  ],
+  "theme": "dark",
+  "view": "grid",
+  "timestamp": 1777644480972
+}
