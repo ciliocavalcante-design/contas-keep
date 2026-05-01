@@ -66,6 +66,11 @@
           save(notes);
           if (data.theme) applyTheme(data.theme);
           if (data.view) applyView(data.view);
+          updateMonthOptions();
+          if (notes.length > 0) {
+            currentMonth = notes[0].month || new Date(notes[0].createdAt).toISOString().slice(0,7);
+            localStorage.setItem(MK, currentMonth);
+          }
           render();
           toast('Backup importado com sucesso!');
         } else {
@@ -169,10 +174,11 @@
     const sorted = [...months].sort().reverse();
     monthSelect.innerHTML = sorted.map(m => `<option value="${m}">${m.split('-').reverse().join('/')}</option>`).join('');
     monthSelect.value = currentMonth;
-    if(!monthSelect.value && sorted.length > 0) {
+    if((!monthSelect.value || monthSelect.value === '') && sorted.length > 0) {
       currentMonth = sorted[0];
       monthSelect.value = currentMonth;
     }
+    localStorage.setItem(MK, currentMonth);
   }
   monthSelect.onchange = () => {
     currentMonth = monthSelect.value;
